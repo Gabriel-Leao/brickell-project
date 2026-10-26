@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brickell: lista de espera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="wrap">
+<header>Brickell</header>
+
+<div class="hero">
+  <div>
+    <h1>O remédio da sua família não pode acabar sem avisar.</h1>
+    <p class="lead">A Brickell avisa antes: qual remédio vai acabar, qual receita vai vencer e o que você paga e poderia pegar de graça no SUS.</p>
+    <p class="lead" style="margin-top:12px"><a href="#lista" style="color:var(--pill);font-weight:700">Entrar na lista de espera</a></p>
+  </div>
+  <div class="strip" aria-label="Cartela de comprimidos com três posições vazias">
+    <svg id="blister" viewBox="0 0 400 200" role="img" aria-hidden="true"></svg>
+    <span class="tag">Remédio da pressão da sua mãe acaba na quinta</span>
+  </div>
+</div>
+
+<section>
+  <h2>Três avisos, antes de dar problema</h2>
+  <div class="three">
+    <div><h3>O remédio vai acabar</h3><p>Você cadastra a caixa e quantas vezes por dia toma. A Brickell conta e avisa com dias de folga, para comprar numa quarta de manhã e não num domingo à noite.</p></div>
+    <div><h3>A receita vai vencer</h3><p>Validade registrada e aviso antes do prazo, com atenção extra para remédio controlado, que custa uma consulta nova se for perdido.</p></div>
+    <div><h3>Pode ser de graça</h3><p>Se o medicamento estiver disponível pelo SUS, você vê onde buscar e quais documentos levar.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="proof">
+    <div class="big">Antes</div>
+    <div>
+      <h2 style="max-width:26ch">Para quem cuida do remédio de alguém</h2>
+      <p class="note" style="font-size:16px">Feita para quem toma vários remédios por dia, ou cuida do remédio de um pai ou de uma mãe, e hoje controla isso olhando caixa e cartela.</p>
+      
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Como vai ser</h2>
+  <p class="lead" style="margin-top:14px">Telas do protótipo. Você cadastra uma vez, acompanha a casa inteira e recebe o aviso antes de faltar. <a href="./mvp/" style="color:var(--pill);font-weight:700">Testar o protótipo clicável ›</a></p>
+  <div class="demo">
+    <figure><div class="ph"><h3>Novo remédio</h3><div class="fld"><b>Nome</b>remédio da pressão</div><div class="fld"><b>Para quem</b>Eu · Minha mãe</div><div class="fld"><b>Quantos tem na caixa</b>30 comprimidos</div><div class="fld"><b>Quantos por dia</b>1, de manhã</div><div class="pbtn">Salvar</div></div><figcaption>Cadastre o remédio uma vez</figcaption></figure>
+    <figure><div class="ph"><h3>Em casa</h3><div class="row hot">Remédio da pressão · Mãe<small>Acaba em 3 dias</small></div><div class="row">Remédio do colesterol · Eu<small>Acaba em 18 dias</small></div><div class="row">Remédio da tireoide · Mãe<small>Acaba em 26 dias</small></div><div class="row">Vitamina D · Eu<small>Receita vence em 12 dias</small></div><div class="pbtn">+ Adicionar remédio</div></div><figcaption>Veja a casa inteira num lugar</figcaption></figure>
+    <figure><div class="ph"><h3>Aviso</h3><div class="row hot"><strong>O remédio da pressão da sua mãe acaba na quinta-feira.</strong></div><div class="dash">Este remédio pode estar disponível de graça na UBS mais perto de você.</div><div class="pbtn">Já comprei</div></div><figcaption>Receba o aviso antes de acabar</figcaption></figure>
+  </div>
+</section>
+
+<section id="lista">
+  <h2>Entre na lista de espera</h2>
+  <p class="lead" style="margin-top:14px">Ainda não existe aplicativo. Os primeiros da lista testam a Brickell com a gente, com avisos enviados pelo canal que você preferir.</p>
+  <form class="form" id="f" novalidate>
+    <label for="nome">Nome</label>
+    <input id="nome" name="nome" autocomplete="name" required>
+    <label for="mail">E-mail</label>
+    <input id="mail" name="mail" type="email" autocomplete="email" required>
+    <label for="zap">Telefone com DDD (opcional)</label>
+    <input id="zap" name="zap" type="tel" inputmode="tel" autocomplete="tel">
+    <label>Por onde prefere receber novidades?</label><div class="chk"><label><input type="checkbox" name="canal" value="E-mail" checked> E-mail</label><label><input type="checkbox" name="canal" value="WhatsApp"> WhatsApp</label><label><input type="checkbox" name="canal" value="SMS"> SMS</label></div>
+    <label for="perfil">Você cuida do remédio de alguém?</label>
+    <select id="perfil" name="perfil" required>
+      <option value="">Escolha uma opção</option>
+      <option>Sim, de pai ou mãe</option>
+      <option>Sim, de outra pessoa da família</option>
+      <option>Não, só tomo os meus remédios</option>
+      <option>Nenhuma das duas</option>
+    </select>
+    <button type="submit" id="btn">Entrar na lista de espera</button>
+    <div id="msg" role="status" aria-live="polite"></div>
+    <p class="note">Usamos seus dados só para falar sobre a Brickell. Não compartilhamos com ninguém.</p>
+  </form>
+</section>
+
+<footer>Brickell é um projeto de startup da turma 4ESPA, FIAP, 2026.</footer>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/blister.js"></script>
+<script src="assets/js/waitlist.js"></script>
+</body>
+</html>
